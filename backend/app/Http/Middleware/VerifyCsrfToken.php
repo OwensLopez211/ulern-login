@@ -1,0 +1,4 @@
+
+protected $except = [
+    '/register',
+];
