@@ -4,15 +4,14 @@ Sistema de autenticación para **Edulern**, desarrollado siguiendo las mejores p
 
 ## **Requisitos previos**
 
-- **Backend**: Laravel (versión 10 o superior).
-- **Frontend**: React (versión 18 o superior).
-
+- **Backend**: Laravel (versión 11).
+- **Frontend**: Vue 3
+  
 ### **Entorno**
 
 - **PHP** >= 8.1 con Composer instalado.
-- **Node.js** >= 18 con npm o yarn.
-- **Base de datos**: MySQL/PostgreSQL (o la base de datos que prefieras).
-
+- **Node.js** >= 18 con npm
+- **Base de datos**: MySQL
 ---
 
 ## **Instalación**
@@ -20,17 +19,11 @@ Sistema de autenticación para **Edulern**, desarrollado siguiendo las mejores p
 ### **1. Clona el repositorio**
 
 ```bash
-git clone https://github.com/tuusuario/edulern.git
-cd edulern
+git clone https://github.com/OwensLopez211/ulern-login
+cd ulern-login
 ```
 
 ### **2. Configura el entorno del backend**
-
-Copia el archivo `.env.example` y renómbralo a `.env`:
-
-```bash
-cp .env.example .env
-```
 
 Configura las credenciales de tu base de datos y otros ajustes necesarios en el archivo `.env`.
 
@@ -40,7 +33,6 @@ Ejecuta los siguientes comandos:
 
 ```bash
 composer install
-php artisan key:generate
 php artisan migrate
 ```
 
