@@ -1,0 +1,120 @@
+.uiverse {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.4s ease; /* Más lento y fluido */
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease; /* Más lenta y fluida */
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.5s ease; /* Ajuste lento y fluido */
+  }
+  
+  .uiverse:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .uiverse:hover,
+  .uiverse:hover .tooltip,
+  .uiverse:hover .tooltip::before {
+    background: linear-gradient(320deg, rgb(3, 77, 146), rgb(0, 60, 255));
+    color: #ffffff;
+    transition: background 0.5s ease, color 0.5s ease; /* Más lento */
+  }
+  
+  .uiverse-register {
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .tooltip-register {
+    position: absolute;
+    bottom: 0; /* Coloca el tooltip hacia abajo */
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+  
+  .tooltip-register::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    top: -3px; /* Ajusta la posición del triángulo hacia arriba del tooltip */
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .uiverse-register:hover .tooltip-register {
+    bottom: -45px; /* Coloca el tooltip más abajo */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .uiverse-register:hover,
+  .uiverse-register:hover .tooltip-register,
+  .uiverse-register:hover .tooltip-register::before {
+    background: linear-gradient(320deg, rgb(34, 139, 34), rgb(50, 205, 50)); /* Verde */
+    color: #ffffff;
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  

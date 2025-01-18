@@ -1,0 +1,84 @@
+/* Fondo translúcido con blur */
+.login-bg {
+    background: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Bola animada */
+  .login-bg::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #3b82f6, #9333ea, #22c55e);
+    filter: blur(150px);
+    border-radius: 50%;
+    animation: bounceAround 15s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 0;
+  }
+  
+  /* Animación de la bola */
+  @keyframes bounceAround {
+    0% {
+      transform: translate(10vw, 10vh); /* Comienza en la esquina superior izquierda */
+    }
+    20% {
+      transform: translate(30vw, 20vh); /* Curvatura suave */
+    }
+    40% {
+      transform: translate(50vw, 10vh); /* Curva hacia el centro */
+    }
+    60% {
+      transform: translate(70vw, 40vh); /* Curva hacia el borde derecho */
+    }
+    80% {
+      transform: translate(30vw, 60vh); /* Curvatura descendente */
+    }
+    100% {
+      transform: translate(10vw, 10vh); /* Regresa a la posición inicial */
+    }
+  }
+  
+  /* Contenedor principal con neumorfismo */
+  .neumorphic-container {
+    background: #f1f5f9;
+    border-radius: 25px;
+    box-shadow: 
+      8px 8px 15px rgba(0, 0, 0, 0.1), 
+      -8px -8px 15px rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    z-index: 1; /* Asegura que esté sobre la bola */
+  }
+  
+  /* Botones y campos de entrada */
+  .input-field {
+    width: 100%;
+    border: none;
+    background: #f1f5f9;
+    color: #374151;
+    border-radius: 50px;
+    padding: 0.75rem 1rem;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+      -4px -4px 8px rgba(255, 255, 255, 0.5);
+  }
+  

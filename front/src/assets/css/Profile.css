@@ -1,0 +1,27 @@
+/* Ajustes generales */
+body {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .bg-gray-50 {
+    background-color: #f9fafb;
+  }
+  
+  /* Imagen de perfil */
+  img {
+    object-fit: cover;
+  }
+  
+  /* Fondo degradado elegante */
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+  }
+  
+  /* Tarjetas de información */
+  .info-card {
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  

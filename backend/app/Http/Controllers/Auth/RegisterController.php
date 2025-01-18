@@ -5,54 +5,45 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Asegúrate de importar Auth
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log; // Importación correcta de Log
 
 class RegisterController extends Controller
 {
-    /**
-     * Muestra el formulario de registro.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
+    public function store(Request $request)
     {
-        return view('auth.register'); // Asegúrate de tener la vista en resources/views/auth/register.blade.php
-    }
+        try {
+            // Validación de datos
+            $request->validate([
+                'nombre' => 'required|string|max:255',
+                'apellido' => 'required|string|max:255',
+                'telefono' => 'required|string|max:20',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:8|confirmed',
+            ]);
 
-    /**
-     * Maneja una solicitud de registro.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-        public function store(Request $request)
-    {
-        // Validar los datos ingresados
-        $validatedData = $request->validate([
-            'nombre' => 'required|string|max:255',
-            'apellido' => 'required|string|max:255',
-            'telefono' => 'required|string|max:15',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+            // Crear usuario
+            $user = User::create([
+                'nombre' => $request->nombre,
+                'apellido' => $request->apellido,
+                'telefono' => $request->telefono,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        // Crear el usuario
-        $user = User::create([
-            'nombre' => $validatedData['nombre'],
-            'apellido' => $validatedData['apellido'],
-            'telefono' => $validatedData['telefono'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
-        ]);
+            return response()->json([
+                'message' => 'Usuario registrado con éxito',
+                'user' => $user,
+            ], 201);
+        } catch (\Exception $e) {
+            // Registro del error en los logs
+            Log::error($e->getMessage());
 
-        // Opcional: autenticar al usuario recién registrado
-        Auth::login($user);
-
-        // Retornar una respuesta JSON
-        return response()->json([
-            'message' => 'Usuario registrado correctamente',
-            'user' => $user,
-        ], 201); // Código 201 para creación exitosa
+            // Respuesta de error
+            return response()->json([
+                'message' => 'Ocurrió un error en el registro',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
 }

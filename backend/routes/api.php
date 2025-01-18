@@ -1,13 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
+use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LogoutController::class, 'logout'])->middleware('auth:sanctum');
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+Route::middleware('auth:sanctum')->get('/profile', function (Request $request) {
+    return response()->json($request->user());
+});
+Route::middleware('auth:sanctum')->put('/profile', [ProfileController::class, 'updateProfile']);
+

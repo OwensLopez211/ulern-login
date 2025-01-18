@@ -4,21 +4,25 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCustomFieldsToUsersTable extends Migration
+class AddProfileFieldsToUsersTable extends Migration
 {
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('nombre')->default('')->nullable(false);
-            $table->string('apellido')->default('')->nullable(false);
-            $table->string('telefono')->default('')->nullable(false);
+            $table->text('experiencia')->nullable();
+            $table->text('acerca_de_mi')->nullable();
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['nombre', 'apellido', 'telefono']);
+            $table->dropColumn([
+
+                'experiencia',
+                'acerca_de_mi',
+
+            ]);
         });
     }
 }

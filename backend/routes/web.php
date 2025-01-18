@@ -8,9 +8,7 @@ Route::get('/', function () {
     return view('welcome'); // Cambia a la vista que desees para tu página principal
 });
 
-// Rutas de registro
-Route::get('/register', [RegisterController::class, 'create'])->name('register'); // Muestra el formulario de registro
-Route::post('/register', [RegisterController::class, 'store']); // Procesa el registro del usuario
+// Rutas solo para formularios web
 
 // Rutas de ejemplo para autenticación adicional
 Route::get('/home', function () {
