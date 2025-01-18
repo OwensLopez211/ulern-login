@@ -67,12 +67,3 @@ php artisan serve
 El backend estará disponible en [http://localhost:8000](http://localhost:8000) por defecto.
 
 ---
-
-## **Notas adicionales**
-
-- Asegúrate de tener las extensiones necesarias de PHP instaladas (como `pdo_mysql` o `pdo_pgsql`, dependiendo de la base de datos que uses).
-- Puedes personalizar el puerto del backend usando la opción `--port`:
-  ```bash
-  php artisan serve --port=8080
-  ```
-- Verifica que las variables de entorno en `.env` coincidan con las configuraciones de tu entorno local o de producción.
