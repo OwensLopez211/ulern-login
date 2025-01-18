@@ -1,20 +1,23 @@
-# Edulern Login
+# ✨ Edulern Login
 
 Sistema de autenticación para **Edulern**, desarrollado siguiendo las mejores prácticas en seguridad y usabilidad. Este sistema permite a los usuarios registrarse, iniciar sesión y gestionar sus cuentas.
 
-## **Requisitos previos**
+---
+
+## 🚀 **Requisitos previos**
 
 - **Backend**: Laravel (versión 11).
 - **Frontend**: Vue 3
-  
-### **Entorno**
+
+### 🛠️ **Entorno**
 
 - **PHP** >= 8.1 con Composer instalado.
 - **Node.js** >= 18 con npm
 - **Base de datos**: MySQL
+
 ---
 
-## **Instalación**
+## 📥 **Instalación**
 
 ### **1. Clona el repositorio**
 
@@ -67,3 +70,21 @@ php artisan serve
 El backend estará disponible en [http://localhost:8000](http://localhost:8000) por defecto.
 
 ---
+
+## 🎯 **Notas adicionales**
+
+- Asegúrate de tener las extensiones necesarias de PHP instaladas (como `pdo_mysql` o `pdo_pgsql`, dependiendo de la base de datos que uses).
+- Puedes personalizar el puerto del backend usando la opción `--port`:
+  ```bash
+  php artisan serve --port=8080
+  ```
+- Verifica que las variables de entorno en `.env` coincidan con las configuraciones de tu entorno local o de producción.
+
+---
+
+## 📚 **Recursos útiles**
+
+- [Documentación oficial de Laravel](https://laravel.com/docs)
+- [Guía de Vue 3](https://vuejs.org/)
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/)
