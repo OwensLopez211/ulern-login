@@ -7,7 +7,7 @@ Sistema de autenticación para **Edulern**, desarrollado siguiendo las mejores p
 ## 🚀 **Requisitos previos**
 
 - **Backend**: Laravel (versión 11).
-- **Frontend**: Vue 3
+- **Frontend**: Vue 3 + TailwindCSS
 
 ### 🛠️ **Entorno**
 
